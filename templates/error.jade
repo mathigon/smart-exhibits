@@ -1,0 +1,14 @@
+extends layout
+
+block vars
+  - var title = 'Error'
+
+block content
+  h1
+    if code == 404
+      | This Page doesn't exist. (404)
+    else
+      | Something went wrong. (500)
+
+  if error
+    pre= error
