@@ -9,8 +9,8 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "start": "grunt build && node app.js --use_strict",
-    "watch": "grunt build && nodemon app.js --use-strict --ignore 'gruntfile.js' --ignore 'node_modules/**' --ignore 'build/**' --ignore 'assets/**' --ignore 'exhibits/**.js' --ignore '.idea/**'"
+    "start": "grunt build && node --use_strict app.js",
+    "watch": "grunt build && nodemon --use_strict --ignore 'gruntfile.js' --ignore 'node_modules/**' --ignore 'build/**' --ignore 'assets/**' --ignore 'exhibits/**.js' --ignore '.idea/**' app.js"
   },
   "dependencies": {
     "compression": "^1.6.1",
