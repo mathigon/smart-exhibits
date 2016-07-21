@@ -35,6 +35,7 @@ app.get('/_ah/health', function (req, res) { res.status(200).send('ok'); });
 app.use(compress());
 // app.use(favicon(path.join(__dirname, 'build/favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build/assets')));
+app.use('/vendor', express.static(path.join(__dirname, 'vendor')));
 
 
 // -----------------------------------------------------------------------------
