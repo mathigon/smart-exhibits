@@ -1,0 +1,73 @@
+extends ../../templates/layout
+
+block vars
+  - var title = 'demo'
+  - var description = 'demo'
+
+block scripts
+  script(type="text/javascript", src="/vendor/cindy.js")
+
+block content
+
+  h1
+    .subtitle Imaginary Smart Exhibits
+    | CindyJS Demo: Factorization Diagrams
+  canvas#cindy-canvas(align="left" valign="top" width="500" height="500")
+
+  script#cindy-script(type="cindyscript").
+    smallest(n):=(
+                  regional(i);
+                  i=2;
+                    while(|(n/i-round(n/i))|>0.00001,errc(i);i=round(i+1));
+                  i;
+                );
+    factor(n):=(
+                regional(i,k);
+                i=smallest(n);
+                k=n/i;
+                if(k==1,[i],[i]++factor(k));
+            );
+
+    drawlist(l,p,r,wi):=(
+
+        regional(k,li,w,ww,rr2);
+        if(l==[]%l==[1],
+            fillcircle(p,r,color->(0,0,0))
+          ,
+            k=l_(-1);
+            li=l_(1..(length(l)-1));
+            rr2=.7;
+            apply(1..k,i,
+                w=360°/k*i+wi;
+                ww=0;rr=1.5;
+                    if(mod(li_(-1),2)==0,ww=w);
+
+                    if(k==2,rr=1;rr2=.55);
+                    if(k==4,rr=1.3;rr2=.55);
+                    if(k==3,rr=1.2;rr2=.65);
+
+
+                drawlist(li,p+rr2*r*(sin(w+if(k==4,45°,0)),cos(w+if(k==4,45°,0))),r/k*rr,ww);
+            )
+        )
+    );
+    pfz=if(n==1,[1],factor(n));
+    str=""+pfz_1;
+    apply(2..length(pfz),str=str+"×"+pfz_#);
+    if(length(pfz)==1,str="prime");
+    if(pfz==[1],str="the unit");
+    drawtext((-9,9),n+"="+str);
+
+    compress(li):=if(length(li)<1,false,li_[1,2]==[2,2]);
+    app=[];
+    while(compress(pfz),
+          pfz=apply(3..length(pfz),pfz_#);
+          app=app++[4];
+        );
+
+    pfz=app++pfz;
+
+    //    errc(pfz);
+
+    drawlist(pfz,(0,0),7,0);
+

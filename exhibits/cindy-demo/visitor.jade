@@ -1,0 +1,15 @@
+extends ../../templates/layout
+
+block vars
+  - var title = 'demo'
+  - var description = 'demo'
+
+block content
+  h1
+    .subtitle Imaginary Smart Exhibits
+    | Factorization Diagrams
+
+  .main
+    p Move this slider to update the simulation.
+    input#slider(type="range", min=1, max=50, step=1, orient="vertical")
+    p.current
