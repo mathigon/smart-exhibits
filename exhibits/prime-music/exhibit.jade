@@ -1,0 +1,19 @@
+extends ../../templates/layout
+
+block vars
+  - var title = 'demo'
+  - var description = 'demo'
+
+block content
+
+  h1
+    .subtitle Imaginary Smart Exhibits
+    | Music of the Primes
+
+  .number-grid
+    - var i = 1
+    while i <= 100
+      .number-cell= i
+      - i += 1
+
+  p: button Start
