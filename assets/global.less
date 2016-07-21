@@ -1,0 +1,137 @@
+// =================================================================================================
+// Smart Exhibits Global Styles
+
+
+// -------------------------------------------------------------------------------------------------
+// General
+
+audio:not([controls]) { display: none; height: 0; }
+html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+svg { display: block; overflow: hidden; }
+g, use, path, circle, rect, line, polyline { transform-origin: center; }
+* { -webkit-tap-highlight-color: transparent; cursor: inherit; color: inherit; }
+
+::selection { background: rgba(0,0,0,0.1); text-shadow: none; }
+
+html, body { margin: 0; padding: 0; }
+
+html {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    cursor: default;
+    color: #333;
+    background-color: white;
+    min-width: 320px;
+    touch-action: manipulation;
+}
+
+.hidden, [hidden], .invisible { display: none !important; visibility: hidden !important; }
+.noselect  { user-select: none; }
+.nocallout { -webkit-touch-callout: none; }
+.clearfix:after { content: " ";  display: block; clear: both; }
+
+
+// -------------------------------------------------------------------------------------------------
+// Typography
+
+p { margin: 0 0 1em 0; }
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    font-weight: 600;
+    color: inherit;
+    text-rendering: optimizelegibility;
+    text-wrap: balance;
+}
+
+h1 { font-size: 2em;   margin: 2em 0 2em 0; }
+h2 { font-size: 1.6em; margin: 1.6em 0 1em 0; }
+h3 { font-size: 1.2em; margin: 1.2em 0 1em 0; }
+
+a { text-decoration: none; cursor: pointer; }
+a:hover { text-decoration: none; }
+a:focus, a:active, a:hover { outline: none; }
+
+p a {
+    color: #0aa;
+    position: relative;
+    transition: color .2s;
+    &:hover, &:focus { color: #088; }
+}
+
+input:invalid { box-shadow: none; outline: none; }
+a, button { touch-action: manipulation; }
+button { user-select: none; }
+
+small, .small { font-size: 80%; }
+b, strong { font-weight: bold; }
+em, i, dfn { font-style: italic; }
+
+ul, ol { margin: 0 0 1em 1.5em; padding: 0; text-align: left; }
+ul ul, ul ol, ol ol, ol ul { margin: 0.5em 0 0 1.5em; }
+li { margin: 0 0 0.5em 0; }
+
+hr { display: block; height: 1px; border: 0; background: #AAA; margin: 1em 0; padding: 0; clear: both; }
+img { vertical-align: middle; border: 0; -ms-interpolation-mode: bicubic; max-width: 100%; height: auto; }
+
+table { border-collapse: collapse; border-spacing: 0; border: none; }
+td { vertical-align: top; border: none; }
+
+
+// -------------------------------------------------------------------------------------------------
+// Grid
+
+.row, .column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.row { flex-direction: row; }
+.column { flex-direction: column; }
+.row.right { flex-direction: row-reverse; }
+.column.up { flex-direction: column-reverse; }
+
+.row.padded, .column.padded { margin: -24px; }
+.row.padded > *, .column.padded > * { margin: 24px; }
+
+.row .grow, .column .grow { flex-grow: 1; }
+.row .shrink, .column .shrink { flex-shrink: 1; }
+
+
+// -------------------------------------------------------------------------------------------------
+// Forms
+
+form, fieldset, input, button, select, textarea { border: none; margin: 0; padding: 0; }
+form, fieldset { display: block; }
+
+input, button, select, textarea {
+    display: inline-block;
+    background: transparent;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input.form-field, .form-field input,
+select.form-field, .form-field select,
+textarea.form-field {
+    height: 2em;
+    line-height: 1.4em;
+    padding: .3em .6em;
+    border-radius: 4px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: border .2s, background-color .2s, color .2s;
+}
+
+input[type="text"] { -webkit-appearance: none; }
+
+input[type="text"], select, textarea {
+    cursor: text;
+    background-color: #EEE;
+    &:hover, &:focus { background-color: #DDD; }
+    &:focus { border-color: #00a; }
+}

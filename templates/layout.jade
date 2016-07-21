@@ -22,15 +22,15 @@ html
     link(href='/global.css', rel='stylesheet')
     if room
       link(href='/' + room + '/' + type + '.css', rel='stylesheet')
-    link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic', rel='stylesheet')
+    // link(href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic', rel='stylesheet')
     block styles
 
   body
     block content
 
     script(src='/polyfill.js')
+    block scripts
     if room
       script window.SE = { room: '#{room}' };
       script(src='/' + type + '.js')
       script(src='/' + room + '/' + type + '.js')
-    block scripts
