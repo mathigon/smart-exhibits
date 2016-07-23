@@ -7,3 +7,6 @@ skip_files:
 handlers:
 - url: /.*
   script: app.js
+
+automatic_scaling:
+   max_num_instances: 1

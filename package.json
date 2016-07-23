@@ -9,8 +9,10 @@
     "node": ">=6.0.0"
   },
   "scripts": {
-    "start": "grunt build && node --use_strict app.js",
-    "watch": "grunt build && nodemon --use_strict --ignore 'gruntfile.js' --ignore 'node_modules/**' --ignore 'build/**' --ignore 'assets/**' --ignore 'exhibits/**.js' --ignore '.idea/**' app.js"
+    "start": "node --use_strict app.js",
+    "watch": "nodemon --use_strict --ignore 'gruntfile.js' --ignore 'node_modules/**' --ignore 'build/**' --ignore 'assets/**' --ignore 'exhibits/**.js' --ignore '.idea/**' app.js",
+    "build": "grunt",
+    "deploy": "grunt && gcloud app deploy --project imaginary-1381"
   },
   "dependencies": {
     "compression": "^1.6.1",

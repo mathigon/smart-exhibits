@@ -1,0 +1,47 @@
+html, body {
+    background: #0e5988;
+    height: 100%;
+}
+
+h1 {
+    position: fixed;
+    left: 0;
+    right: 0;
+    padding: 12px 0;
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 18px;
+    display: block;
+    margin-bottom: -6px;
+    font-weight: 400;
+}
+
+.canvas {
+    height:100%;
+    width: 100%;
+}
+
+.canvas > * {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: currentColor;
+
+    &:before {
+        background: currentColor;
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        top: 5px;
+        left: 14px;
+        border-radius: 2px;
+        content: " ";
+    }
+}

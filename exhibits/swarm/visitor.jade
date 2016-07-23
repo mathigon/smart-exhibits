@@ -1,0 +1,27 @@
+extends ../../templates/layout
+
+block vars
+  - var title = 'demo'
+  - var description = 'demo'
+
+block content
+  h1
+    .subtitle Imaginary Smart Exhibits
+    | Swarm Dynamics
+
+  .main
+    p The motion of fish schools looks incredibly complex,#[br]yet it arises from a few simple rules.
+
+    label#attraction
+      | Every fish follows the average direction#[br]and position of other nearby fish.
+      input(type="range", min=-2, max=2, step=0.1, value=0)
+
+    label#repulsion
+      | Every fish avoids collisions with its closest neighbours.
+      input(type="range", min=-2, max=2, step=0.1, value=0)
+
+    label#speed
+      | Every fish swims at a similar speed.
+      input(type="range", min=-2, max=2, step=0.1, value=0)
+
+    p You can modify these properties for#[br]your specific specie of fish.
