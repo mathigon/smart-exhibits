@@ -17,3 +17,13 @@ socket.on('visitor-join', function(id) {
 socket.on('visitor-leave', function(id) {
     SE.visitors = SE.visitors.filter(x => x != id);
 });
+
+document.addEventListener('keydown', function(e) {
+    if (e.keyCode !== 13) return;
+
+    if (!document.webkitFullscreenElement) {
+        document.documentElement.webkitRequestFullScreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    }
+});

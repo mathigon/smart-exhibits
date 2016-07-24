@@ -11,6 +11,6 @@ for (let slider of document.querySelectorAll('label')) {
 }
 
 SE.onReceive(function(data) {
-    document.querySelector('body').style.background = data.colour;
+    document.documentElement.style.background = data.colour;
     ready = true;
 });

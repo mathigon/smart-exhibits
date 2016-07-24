@@ -35,8 +35,8 @@ function animate(callback) {
 // ---------------------------------------------------------------------------------------------------------------------
 
 let fish = [];
-let width = 1000;
-let height = 1000;
+let width = window.innerWidth;
+let height = window.innerHeight;
 
 function createSwarm(n, visitor) {
     let colour = colours.pop();
@@ -140,15 +140,3 @@ function update() {
 createSwarm(12, 'x');
 createSwarm(12, 'y');
 animate(update);
-
-// ---------------------------------------------------------------------------------------------------------------------
-
-document.addEventListener('keydown', function(e) {
-    if (e.keyCode !== 13) return;
-
-    if (!document.webkitFullscreenElement) {
-        document.documentElement.webkitRequestFullScreen();
-    } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-    }
-});
